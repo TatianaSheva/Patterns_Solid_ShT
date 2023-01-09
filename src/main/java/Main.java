@@ -12,17 +12,17 @@ public class Main {
 
         System.out.println("Введите два слова: название товара и количество. Или end");
         Scanner scanner = new Scanner(System.in);
-        Purchase purchase = new Purchase();
+        Products products = new Products();
         while (true) {
             String line = scanner.nextLine();
             if ("end".equals(line)) break;
             String[] parts = line.split(" ");
             String product = parts[0];
             int count = Integer.parseInt(parts[1]);
-            purchase.addPurchase(product, count);
+            products.addPurchase(product, count);
         }
 
-        long sum = purchase.sum(Products.getProducts());
+        long sum = products.sum(Products.getProducts());
         System.out.println("ИТОГО: " + sum);
     }
 }
